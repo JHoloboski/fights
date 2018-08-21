@@ -5,6 +5,11 @@
 #     self.value = x
 #     self.left = None
 #     self.right = None
+
+'''
+Solution is O(t1 * t2) as we may need to check the same nodes in t1 as many
+times as there are nodes in t2
+'''
 def isSubtree(t1, t2):
     # if t2 is None, we've traversed that subtree fully, so can return True
     if t2 is None:
@@ -28,5 +33,5 @@ def is_equal(t1, t2):
     
     # Getting through our base cases above, we know we have a node that's equal, so
     # we can traverse both subtrees and keep looking for equality until we hit
-    # leaf nodes on both sides
+    # leaf nodes on both sides or we hit values that aren't equal
     return is_equal(t1.left, t2.left) and is_equal(t1.right, t2.right)
